@@ -10,7 +10,7 @@
 
 <style>
   :root{
-    --bg:#fff6f1;
+    --bg:pink;
     --accent:#f25f44;
     --dark:#1f1f1f;
     --muted:#bfae99;
@@ -260,3 +260,4 @@
 </body>
 
 </html>
+
