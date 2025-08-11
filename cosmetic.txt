@@ -225,7 +225,7 @@
     <div class="team">
       <div class="lead">💄 Pratyusha Kumari PAnda</div>
       <ul>
-        <li>🧠 Preethi.U</li>
+        <li>🧠 Preethi.V</li>
         <li>💻 Lohitha.P</li>
         <li>🔧 Devi Prasanna</li>
         <li>💻 Sreeja</li>
@@ -258,4 +258,5 @@
 
   </div>
 </body>
+
 </html>
