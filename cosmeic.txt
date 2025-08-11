@@ -227,7 +227,7 @@
       <ul>
         <li>🧠 Preethi.V</li>
         <li>💻 Lohitha.P</li>
-        <li>🔧 Devi Prasanna</li>
+        <li>🔧 Devi Naga Prasanna</li>
         <li>💻 Sreeja</li>
         <li>🔧 Padmini.B</li>
       </ul>
@@ -261,6 +261,7 @@
 </body>
 
 </html>
+
 
 
 
