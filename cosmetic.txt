@@ -1,0 +1,261 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>GlowUp Cosmetics — Poster</title>
+
+<!-- Google Fonts -->
+<link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@600;800&family=Montserrat:wght@400;600&display=swap" rel="stylesheet">
+
+<style>
+  :root{
+    --bg:#fff6f1;
+    --accent:#f25f44;
+    --dark:#1f1f1f;
+    --muted:#bfae99;
+    --card:#fffdfb;
+  }
+
+  html,body{
+    height:100%;
+    margin:0;
+    font-family: 'Montserrat', system-ui, sans-serif;
+    background: linear-gradient(180deg, #fff8f6 0%, #fff6f1 100%);
+    -webkit-font-smoothing:antialiased;
+    -moz-osx-font-smoothing:grayscale;
+  }
+
+  /* poster frame */
+  .poster {
+    width:900px;
+    max-width:96vw;
+    margin:24px auto;
+    background:
+      radial-gradient(circle at 10% 20%, rgba(242,95,68,0.06) 0 2%, transparent 6%),
+      linear-gradient(transparent, rgba(255,235,220,0.02));
+    border-radius:18px;
+    box-shadow: 0 10px 30px rgba(30,30,30,0.12);
+    padding:36px 40px;
+    position:relative;
+    overflow:hidden;
+    min-height:1200px;
+  }
+
+  /* subtle confetti/texture */
+  .poster::before{
+    content:"";
+    position:absolute;
+    inset:0;
+    background-image: url('data:image/svg+xml;utf8,\
+      <svg xmlns="http://www.w3.org/2000/svg" width="600" height="600">\
+      <g fill="%23f0d9a6" fill-opacity="0.18">\
+        <circle cx="40" cy="50" r="2"/>\
+        <circle cx="120" cy="200" r="2"/>\
+        <circle cx="300" cy="40" r="2"/>\
+        <circle cx="250" cy="220" r="2"/>\
+        <circle cx="420" cy="120" r="2"/>\
+        <circle cx="520" cy="300" r="2"/>\
+      </g></svg>');
+    mix-blend-mode:multiply;
+    pointer-events:none;
+  }
+
+  /* title bubble */
+  .title-wrap{
+    display:flex;
+    justify-content:center;
+    margin-top:10px;
+  }
+  .title {
+    font-family: 'Baloo 2', 'Montserrat', sans-serif;
+    font-weight:800;
+    color:var(--accent);
+    font-size:64px;
+    letter-spacing:2px;
+    background: white;
+    padding:22px 34px;
+    border-radius:48px;
+    box-shadow: 0 6px 12px rgba(242,95,68,0.06);
+    border:6px solid rgba(255,255,255,0.6);
+    text-align:center;
+  }
+
+  /* tagline */
+  .tagline{
+    text-align:center;
+    margin-top:30px;
+    color:var(--accent);
+    font-size:28px;
+    font-weight:600;
+    letter-spacing:0.6px;
+    font-style:italic;
+  }
+
+  /* features list */
+  .features {
+    margin:44px auto 0;
+    max-width:640px;
+    background:linear-gradient(180deg, rgba(255,255,255,0.6), transparent 60%);
+    padding:26px 28px;
+    border-radius:12px;
+    text-align:left;
+    box-shadow: 0 6px 20px rgba(0,0,0,0.03);
+    font-size:22px;
+    color:var(--dark);
+    font-weight:700;
+  }
+  .features li{
+    margin:12px 0;
+    display:flex;
+    align-items:center;
+    gap:12px;
+  }
+  .features .emoji {
+    font-size:26px;
+    width:36px;
+    text-align:center;
+  }
+
+  /* team list */
+  .team {
+    margin-top:56px;
+    text-align:center;
+    color:var(--dark);
+    font-weight:700;
+    font-size:20px;
+  }
+  .team .lead {
+    font-size:20px;
+    margin-bottom:8px;
+  }
+  .team ul{
+    list-style:none;
+    padding:0;
+    margin:6px 0 0;
+    line-height:1.5;
+    font-weight:700;
+  }
+
+  /* decorative corner shapes */
+  .dec {
+    position:absolute;
+    pointer-events:none;
+  }
+  .dec.star { left:22px; top:16px; transform:rotate(-8deg); width:92px; opacity:0.95; }
+  .dec.sung { right:22px; top:18px; width:84px; opacity:0.95; }
+  .dec.leaf-left { left:-40px; top:220px; width:300px; transform:rotate(-12deg); opacity:0.95; }
+  .dec.leaf-right { right:-40px; top:320px; width:300px; transform:rotate(12deg); opacity:0.95; }
+
+  /* bottom beach items */
+  .bottom-decor {
+    position:absolute;
+    left:20px;
+    right:20px;
+    bottom:24px;
+    display:flex;
+    justify-content:space-between;
+    align-items:flex-end;
+    gap:12px;
+  }
+  .b-left, .b-right { width:180px; max-width:30%; }
+  .crab { width:160px; max-width:28%; transform:translateY(6px); }
+
+  /* responsive */
+  @media (max-width:520px){
+    .title{ font-size:44px; padding:16px 20px; }
+    .tagline{ font-size:18px; }
+    .features{ font-size:18px; padding:18px; }
+    .poster{ padding:20px; min-height:1000px; }
+  }
+</style>
+</head>
+<body>
+  <div class="poster" role="img" aria-label="GlowUp Cosmetics poster">
+
+    <!-- decorations (simple svg shapes / emoji-styled) -->
+    <img class="dec star" src="data:image/svg+xml;utf8,
+      <svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 120 120'>
+        <path d='M60 6 L74 44 L114 46 L82 70 L92 110 L60 86 L28 110 L38 70 L6 46 L46 44 Z' fill='%23ee4f42' stroke='%23c43' stroke-width='4' stroke-linejoin='round'/>
+      </svg>" alt="" />
+
+    <img class="dec sung" src="data:image/svg+xml;utf8,
+      <svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 120 60'>
+        <rect x='2' y='6' rx='10' ry='10' width='116' height='42' fill='%23e94444'/>
+        <g transform='translate(6,10)'>
+          <rect x='6' y='4' rx='6' ry='6' width='36' height='24' fill='%23004b6b'/>
+          <rect x='58' y='4' rx='6' ry='6' width='36' height='24' fill='%23004b6b'/>
+        </g>
+      </svg>" alt="" />
+
+    <img class="dec leaf-left" src="data:image/svg+xml;utf8,
+      <svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 300 300'>
+        <g fill='%232aa655'>
+          <path d='M20 260 C120 40 210 40 280 260 C200 220 120 200 20 260 Z' stroke='%231b6e3a' stroke-width='3'/>
+          <path d='M40 220 Q120 140 220 220' stroke='%231b6e3a' stroke-width='4' fill='none'/>
+        </g>
+      </svg>" alt="" />
+
+    <img class="dec leaf-right" src="data:image/svg+xml;utf8,
+      <svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 300 300'>
+        <g fill='%232aa655' transform='scale(-1,1) translate(-300,0)'>
+          <path d='M20 260 C120 40 210 40 280 260 C200 220 120 200 20 260 Z' stroke='%231b6e3a' stroke-width='3'/>
+          <path d='M40 220 Q120 140 220 220' stroke='%231b6e3a' stroke-width='4' fill='none'/>
+        </g>
+      </svg>" alt="" />
+
+    <!-- Title -->
+    <div class="title-wrap">
+      <div class="title">GLOWUP<br>COSMETICS</div>
+    </div>
+
+    <!-- Tagline -->
+    <div class="tagline">“YOUR GLOW, YOUR WAY — DISCOVER BEAUTY LIKE NEVER BEFORE”</div>
+
+    <!-- features -->
+    <ul class="features" aria-label="Features list">
+      <li><span class="emoji">🛍</span> Personalized Products</li>
+      <li><span class="emoji">🖼</span> Virtual Try-On</li>
+      <li><span class="emoji">💬</span> Customer Reviews & Ratings</li>
+      <li><span class="emoji">🎨</span> Skin Tone Matching</li>
+      <li><span class="emoji">📝</span> Wishlist</li>
+    </ul>
+
+    <!-- team -->
+    <div class="team">
+      <div class="lead">💄 Pratyusha Kumari PAnda</div>
+      <ul>
+        <li>🧠 Preethi.U</li>
+        <li>💻 Lohitha.P</li>
+        <li>🔧 Devi Prasanna</li>
+        <li>💻 Sreeja</li>
+        <li>🔧 Padmini.B</li>
+      </ul>
+    </div>
+
+    <!-- bottom decor: small bottle, sunscreen, flip-flops, shells, crab -->
+    <div class="bottom-decor" aria-hidden="true">
+      <img class="b-left" src="data:image/svg+xml;utf8,
+        <svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 120 220'>
+          <rect x='10' y='36' rx='10' ry='10' width='80' height='140' fill='%2300b1c7' />
+          <rect x='26' y='14' rx='8' ry='8' width='48' height='30' fill='%23fff' />
+          <circle cx='50' cy='110' r='22' fill='%2300e2ff' opacity='0.25'/>
+        </svg>"/>
+      <div style="flex:1"></div>
+      <img class="crab" src="data:image/svg+xml;utf8,
+        <svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 140 120'>
+          <g>
+            <circle cx='70' cy='66' r='36' fill='%23f24d34'/>
+            <path d='M18 66 C28 36 48 46 36 66 C16 78 6 78 18 66 Z' fill='%23f24d34'/>
+            <path d='M122 66 C112 36 92 46 104 66 C124 78 134 78 122 66 Z' fill='%23f24d34' />
+            <circle cx='54' cy='56' r='6' fill='%23000'/>
+            <circle cx='86' cy='56' r='6' fill='%23000'/>
+            <path d='M28 36 L8 18' stroke='%23f24d34' stroke-width='6' stroke-linecap='round'/>
+            <path d='M112 36 L132 18' stroke='%23f24d34' stroke-width='6' stroke-linecap='round'/>
+          </g>
+        </svg>" alt="" />
+    </div>
+
+  </div>
+</body>
+</html>
